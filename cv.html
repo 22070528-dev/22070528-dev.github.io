@@ -1,41 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Le Thi Thuy Trang</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family:'Times New Roman', Times, serif, sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* Navigation Bar */
+    nav#topmenu ul {
+      list-style: none;
+      background-color: #444;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav#topmenu li {
+      font-size: 18px;
+      line-height: 40px;
+      height: 40px;
+      display: inline-block;
+      padding: 15px 20px;
+    }
+
+    nav#topmenu a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    nav#topmenu a:hover {
+      color: #ffcc00;
+    }
+
+    /* CV content */
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav id="topmenu">
+    <ul>
+      <li><a href="#info">Information</a></li>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#languages">Languages</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
     <h1>Le Thi Thuy Trang</h1>
-<p>Email: lthuytrang633@gmail.com<br> </p>
-<p> Phone: +84 976 586 817 </p>
-<p> Gender: Female </p>
-<p> DoB: 19/11/2004 </p>
-<p> Address: Phu My, My Dinh 2, Nam Tu Liem, Ha Noi </p>
-<hr>
+    <hr>
 
-<h2>Professional Summary</h2>
-<p>Experienced marketing student with strong skills in digital campaigns, content creation, and data analysis. Quick learner, team player, and passionate about creative problem-solving.</p>
-<hr>
+    <details id="info">
+      <summary><h2>Information</h2></summary>
+      <p>Email: lthuytrang633@gmail.com</p>
+      <p>Phone: +84 976 586 817</p>
+      <p>Gender: Female</p>
+      <p>DoB: 19/11/2004</p>
+      <p>Address: Phu My, My Dinh 2, Nam Tu Liem, Ha Noi</p>
+    </details>
+    <hr>
 
-<h2>Education</h2>
-<p> International School - Vietnam National University<br>
-<p> Major: Management Informationn Systems <p>
-<p> GPA: 3.2/4.0 </p>
-2021 - Present</p>
-<hr>
+    <details id="summary" open>
+      <summary><h2>Professional Summary</h2></summary>
+      <p>Experienced marketing student with strong skills in digital campaigns, content creation, and data analysis. Quick learner, team player, and passionate about creative problem-solving.</p>
+    </details>
+    <hr>
 
-<h2>Work Experience</h2>
-<p>Marketing Intern - MediaPost<br>
-April 2024 - Aug 2024<br>
-- Supported social media campaigns and content scheduling.<br>
-- Analyzed campaign metrics and prepared weekly reports.</p>
-<hr>
+    <details id="education">
+      <summary><h2>Education</h2></summary>
+      <p>International School - Vietnam National University</p>
+      <p>Major: Management Information Systems</p>
+      <p>GPA: 3.23/4.0</p>
+      <p>2021 - Present</p>
+    </details>
+    <hr>
 
-<h2>Languages</h2>
-<p>Vietnamese (native)<br>
-English (intermediate)</p>
-<hr>
+    <details id="experience">
+      <summary><h2>Work Experience</h2></summary>
+      <p>Marketing Intern - MediaPost<br>
+      April 2024 - Aug 2024<br>
+      - Supported social media campaigns and content scheduling.<br>
+      - Analyzed campaign metrics and prepared weekly reports.</p>
+    </details>
+    <hr>
 
+    <details id="languages">
+      <summary><h2>Languages</h2></summary>
+      <p>Vietnamese (native)<br>
+      English (intermediate)</p>
+    </details>
+    <hr>
+  </div>
 </body>
 </html>
