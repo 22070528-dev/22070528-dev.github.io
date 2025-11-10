@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form Validation</title>
+    
+    <script>
+        function formValid() {
+            var f = document.frmRegister;
+            // Biểu thức chính quy cho số điện thoại (10 chữ số, bắt đầu bằng 0)
+            var phone_pattern = /^0\d{9}$|^0\d{1}\d{8}$/; 
+            // Biểu thức chính quy cho email
+            var email_pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; 
+
+            // 1. Kiểm tra Tên đăng nhập (Username)
+            if (f.txtUsername.value == "") {
+                alert("Username can't be empty");
+                f.txtUsername.focus();
+                return false;
+            }
+
+            // 2. Kiểm tra Độ dài Mật khẩu (Password 1)
+            if (f.txtPassword1.value.length < 6 || f.txtPassword1.value.length > 20) {
+                alert("Password length must be from 6 to 20 characters");
+                f.txtPassword1.focus();
+                return false;
+            }
+
+            // 3. Kiểm tra Khớp Mật khẩu (Password 2)
+            if (f.txtPassword1.value != f.txtPassword2.value) {
+                alert("Password doesn't match");
+                f.txtPassword2.focus();
+                return false;
+            }
+
+            // 4. Kiểm tra Số điện thoại
+            if (phone_pattern.test(f.txtPhone.value) == false) {
+                alert("Invalid phone number");
+                f.txtPhone.focus();
+                return false;
+            }
+
+            // 5. Kiểm tra Email
+            if (email_pattern.test(f.txtEmail.value) == false) {
+                alert("Invalid email address");
+                f.txtEmail.focus();
+                return false;
+            }
+
+            // 6. Kiểm tra Sở thích (phải chọn ít nhất 1)
+            if (f.chkMusic.checked == false && f.chkReading.checked == false) {
+                alert("You must select at least one favourite");
+                f.chkMusic.focus();
+                return false;
+            }
+
+            // 7. Kiểm tra Tệp ảnh (Picture)
+            if (f.filPicture.value == "") {
+                alert("You must select your picture");
+                f.filPicture.focus();
+                return false;
+            }
+
+            // 8. Kiểm tra Mô tả (Description)
+            if (f.txtDescription.value == "") {
+                alert("You must enter description");
+                f.txtDescription.focus();
+                return false;
+            }
+
+            // Nếu tất cả kiểm tra đều thành công
+            alert("All register information are correct.");
+            return true;
+        }
+    </script>
+    <style>
+        /* Tùy chọn: Thêm CSS cơ bản để dễ nhìn hơn */
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, textarea, button { margin-bottom: 10px; padding: 8px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; }
+        input[type="submit"] { background-color: #4CAF50; color: white; cursor: pointer; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    
+    <h2>Đăng Ký Người Dùng</h2>
+    <form name="frmRegister" onsubmit="return formValid();" method="post" action="#">
+        
+        <label for="username">Tên đăng nhập (Username):</label>
+        <input name="txtUsername" id="username" type="text">
+
+        <label for="pass1">Mật khẩu (6-20 ký tự):</label>
+        <input name="txtPassword1" id="pass1" type="password">
+
+        <label for="pass2">Xác nhận Mật khẩu:</label>
+        <input name="txtPassword2" id="pass2" type="password">
+
+        <label for="phone">Số điện thoại:</label>
+        <input name="txtPhone" id="phone" type="text">
+
+        <label for="email">Email:</label>
+        <input name="txtEmail" id="email" type="text">
+        
+        <label>Sở thích (Chọn ít nhất 1):</label>
+        <div>
+            <input type="checkbox" name="chkMusic" id="music"> <label for="music" style="display: inline;">Âm nhạc</label>
+            <input type="checkbox" name="chkReading" id="reading"> <label for="reading" style="display: inline;">Đọc sách</label>
+        </div>
+        <br>
+        
+        <label for="picture">Tải lên Ảnh đại diện:</label>
+        <input type="file" name="filPicture" id="picture">
+
+        <label for="description">Mô tả bản thân:</label>
+        <textarea name="txtDescription" id="description" rows="5"></textarea>
+
+        <input type="submit" value="HOÀN TẤT ĐĂNG KÝ">
+        
+    </form>
+    
+</body>
+</html>
