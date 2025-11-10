@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      font-family:'Times New Roman', Times, serif, sans-serif;
+      font-family: 'Times New Roman', Times, serif, sans-serif;
       background: #f5f5f5;
     }
 
@@ -57,6 +57,40 @@
     hr {
       border: 1px solid #ddd;
     }
+
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .contact-form button {
+      width: 150px;
+      padding: 10px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #ffcc00;
+      color: #000;
+    }
   </style>
 </head>
 <body>
@@ -68,6 +102,7 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#languages">Languages</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -113,6 +148,24 @@
       <summary><h2>Languages</h2></summary>
       <p>Vietnamese (native)<br>
       English (intermediate)</p>
+    </details>
+    <hr>
+
+    <!-- Contact Form -->
+    <details id="contact">
+      <summary><h2>Contact Me</h2></summary>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
     </details>
     <hr>
   </div>
