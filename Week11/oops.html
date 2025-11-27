@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 onclick="changeText(this)">Click on this text!</h1>
+<script>
+function changeText(id) {
+  id.innerHTML = "Ooops!";
+}
+</script>
+<h2>The onclick Attribute</h2>
+<p>Click the button to display the date.</p>
+<button onclick="displayDate()">The time is?</button>
+<p id="demo"></p>
+<script>
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+<h3>The onload Attribute</h3>
+
+<p id="cookiedemo"></p>
+<body onload="checkCookies()"></body>
+<script>
+function checkCookies() {
+  let text = "";
+  if (navigator.cookieEnabled == true) {
+    text = "Cookies are enabled.";
+  } else {
+    text = "Cookies are not enabled.";
+  }
+  document.getElementById("cookiedemo").innerHTML = text;
+}
+</script>
+<h4>The oninput Attribute</h4>
+
+Enter your name: <input type="text" id="fname1" oninput="upperCase()">
+
+<script>
+function upperCase() {
+  const x = document.getElementById("fname1");
+  x.value = x.value.toUpperCase();
+}
+</script>
+<h5>The onchange Attribute</h5>
+
+Enter your name: <input type="text" id="fname2" onchange="upperCase()">
+
+<script>
+function upperCase() {
+  const x = document.getElementById("fname2");
+  x.value = x.value.toUpperCase();
+}
+</script>
+<h6>The onmouseover Attribute</h6>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+Mouse Over Me</div>
+
+<script>
+function mOver(obj) {
+  obj.innerHTML = "Thank You"
+}
+
+function mOut(obj) {
+  obj.innerHTML = "Mouse Over Me"
+}
+</script>
+<h7>The onmousedown Attribute</h7>
+
+<div onmousedown="mDown(this)" onmouseup="mUp(this)"
+style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+Click Me</div>
+
+<script>
+function mDown(obj) {
+  obj.style.backgroundColor = "#1ec5e5";
+  obj.innerHTML = "Release Me";
+}
+
+function mUp(obj) {
+  obj.style.backgroundColor="#D94A38";
+  obj.innerHTML="Thank You";
+}
+</script>
+</body>
+</html>
